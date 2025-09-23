@@ -70,17 +70,15 @@
               </div>
               
               <div class="col-xs-12 td34up">
-                <form id="frmBuscar" name="frmBuscar" action="" method="post" class="horizontal-form">
-                
                   <div class="row">
                     
                     <div class="col-md-3">
                       <label class="control-label">Ámbito:</label>
                       <div id="ambito" class="form-group">
-                        <select name="cdgoAmbito" id="cdgoAmbito" class="form-control" onchange="buscarAmbito('', 'acta', '', this.value, ''); $('#aComentarioProvincia').html('');">
-                          <option value="P">PERÚ</option>
-                          <option value="E">EXTRANJERO</option>
-                        </select>
+                          <asp:DropDownList ID="ddlAmbito" CssClass="form-control" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlAmbito_SelectedIndexChanged">
+                            <asp:ListItem Text="PERÚ" />
+                            <asp:ListItem Text="EXTRANJERO" />
+                            </asp:DropDownList>
                       </div>
                     </div>
                     
@@ -88,10 +86,10 @@
                       <div class="form-group">
                         <label id="lblDepartamento" class="control-label">Departamento:</label>
                         <div id="departamentos">
-                          <select name="cdgoDep" id="cdgoDep" class="form-control" onchange="getProvinciasDepa_acta('', '', this.value);">
-                            <option selected="selected" value="">--SELECCIONE--</option>
-                            <option value="010000">AMAZONAS</option>
-                          </select>
+                          <asp:DropDownList ID="DDLDepartamento" CssClass="form-control" AutoPostBack="true" runat="server">
+                            <asp:ListItem Text="PERÚ" />
+                            <asp:ListItem Text="EXTRANJERO" />
+                            </asp:DropDownList>
                         </div>
                       </div>
                     </div>
@@ -203,6 +201,7 @@ z
                     <div id="divDetalle" class="ptop20">
                       <div class="contenido-resultados">
                         <button class="btn btn-primary pull-right" onclick="actas_porUbigeo_verActsPr('', '10', '', '1')" type="button">
+                            
                           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                           REGRESAR
                         </button>
