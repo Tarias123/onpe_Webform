@@ -72,69 +72,74 @@
               <div class="col-xs-12 td34up">
                   <div class="row">
                     
-                    <div class="col-md-3">
-                      <label class="control-label">Ámbito:</label>
-                      <div id="ambito" class="form-group">
-                          <asp:DropDownList ID="ddlAmbito" CssClass="form-control" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlAmbito_SelectedIndexChanged">
-                            <asp:ListItem Text="PERÚ" />
-                            <asp:ListItem Text="EXTRANJERO" />
-                            </asp:DropDownList>
-                      </div>
+                 <div class="col-md-3">
+                    <label class="control-label">Ámbito:</label>
+                    <div id="ambito" class="form-group">
+                        <asp:DropDownList 
+                            ID="ddlAmbito" 
+                            CssClass="form-control" 
+                            AutoPostBack="true" 
+                            runat="server" 
+                            OnSelectedIndexChanged="ddlAmbito_SelectedIndexChanged">
+                            <asp:ListItem Text="PERÚ" Value="1" />
+                            <asp:ListItem Text="EXTRANJERO" Value="2" />
+                        </asp:DropDownList>
                     </div>
-                    
-                    <div id="dvNombreDepartamento" class="col-md-3" style="">
-                      <div class="form-group">
+                </div>
+
+
+                <div id="dvNombreDepartamento" class="col-md-3">
+                    <div class="form-group">
                         <label id="lblDepartamento" class="control-label">Departamento:</label>
                         <div id="departamentos">
-                          <asp:DropDownList ID="DDLDepartamento" CssClass="form-control" AutoPostBack="true" runat="server">
-                            <asp:ListItem Text="PERÚ" />
-                            <asp:ListItem Text="EXTRANJERO" />
+                            <asp:DropDownList 
+                                ID="DDLDepartamento" 
+                                runat="server" 
+                                AutoPostBack="true"
+                                OnSelectedIndexChanged="DDLDepartamento_SelectedIndexChanged"
+                                CssClass="form-control">
                             </asp:DropDownList>
                         </div>
-                      </div>
                     </div>
-                    
-                    <div id="dvNombreProvincia" class="col-md-3" style="">
-                      <div class="form-group">
+                </div>
+
+             
+                <div id="dvNombreProvincia" class="col-md-3">
+                    <div class="form-group">
                         <label id="lblProvincia" class="control-label">Provincia:</label>
                         <div id="provincias">
-                          <select name="cdgoProv" id="cdgoProv" class="form-control" onchange="buscarProvincia_actas(this.value, '', 'PR');
-                            if (this.value.substring(0,4) == '9430')
-                              $('#aComentarioProvincia').html('&nbsp;&nbsp;&nbsp;ACTUALMENTE SERBIA');
-                            else
-                              $('#aComentarioProvincia').html('');
-                            ">
-                            <option selected="selected" value="">--SELECCIONE--</option>
-                            <option value="010200">BAGUA</option>
-                          </select>
-                          <span id="aComentarioProvincia"></span>
+                            <asp:DropDownList 
+                                ID="DDLProvincia" 
+                                CssClass="form-control" 
+                                runat="server" 
+                                AutoPostBack="true"
+                                OnSelectedIndexChanged="DDLProvincia_SelectedIndexChanged">
+                            </asp:DropDownList>
                         </div>
-                      </div>
                     </div>
+                </div>
+            </div>
 
-                  </div>
-                  
-                  <div class="row">
-                    
-                    <div class="col-md-4">
-                      <label id="lblDistrito" class="control-label">Distrito:</label>
-                      <div id="distritos" class="form-group">
-                        <select name="cdgoDist" id="cdgoDist" class="form-control" onchange="">
-                          <option selected="selected" value="">--SELECCIONE--</option>
-                          <option value="010202">ARAMANGO</option>
-                        </select>
-                      </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label id="lblDistrito" class="control-label">Distrito:</label>
+                    <div id="distritos" class="form-group">
+                        <asp:DropDownList 
+                            ID="DDLDistrito" 
+                            CssClass="form-control" 
+                            runat="server">
+                        </asp:DropDownList>
                     </div>
-                    
+                </div>
                     <div class="col-md-8">
                       <div class="form-group">
                         <label class="control-label">Locales:</label>
                         <div id="divLocal">    
-                          <select name="actas_ubigeo" id="actas_ubigeo" class="form-control" onchange="actas_porUbigeo_verActsPr(this.value, '10', '')">
-                            <option value="-1?-1" selected="selected">--SELECCIONE--</option>
-                            <option value="0033?010202">IE 16201</option>
-                            <option value="0032?010202">IE MIGUEL MONTEZA TAFUR</option>
-                          </select>
+                          <asp:DropDownList 
+                                ID="DDLLocales" 
+                                CssClass="form-control" 
+                                runat="server">
+                        </asp:DropDownList>
                         </div>
                       </div>
                     </div>
